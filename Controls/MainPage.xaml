@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Controls.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="Bisque" 
+               Padding="24" 
+               CornerRadius="50"
+               HasShadow="True"
+               Margin="10"
+               WidthRequest="90"
+               HeightRequest="80"
+               BorderColor="DarkBlue">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
+        <StackLayout>
+            <Label Text="True or false: Switch and Checkbox"/>
+            <Switch 
+                     OnColor="Green"/>
+            <CheckBox Color="Aqua"/>
+            <Label Text="Numerica Values: Stepper and Slider"/>
+            <Stepper x:Name="Stepper"
+                     Maximum="100" Minimum="0" Value="50"
+                     Increment="10"/>
+            <Label FontSize="Large" 
+                   BindingContext="{x:Reference Stepper}"
+                   Text="{Binding Value}"/>
+            <Slider x:Name="Slider" 
+                    ThumbColor="Blue"
+                    MaximumTrackColor="Purple"
+                    Maximum=" 100"
+                    Minimum="0" />
+            <Label FontSize="Large" 
+                   BindingContext="{x:Reference Slider}"
+                   Text="{Binding Value}"/>
+            <Label Text="Date and Time: DatePicker and TimePicker"/>
+            <DatePicker TextColor="Green"/>
+            <TimePicker TextColor="Blue"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
